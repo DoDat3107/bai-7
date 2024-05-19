@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  placeholder="nhâp giá trị" id="a">
+
+    <input type="number" placeholder="nhâp giá trị" id="b">
+    <br>
+    <button onclick="hienThithuong()">chia</button>
+    <script>
+            function hienThithuong(){
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            let result = a % b;
+        
+            if (a % b === 0)
+            alert(a + 'là bội của' + b + '\n')
+            else {
+                alert( a + 'không phải bội của' + b +'\n')
+            }
+        }
+       
+    </script>
+</body>
+</html>
