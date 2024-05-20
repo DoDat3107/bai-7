@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+
+<p3 ><span style="margin: 50px;">Amount</span></p3> <p3><span style="margin: 50px;">Form Currency</span></p3>
+ <p3> <span>To Currency </span>  </p3>
+
+<br>
+<label for="amount"></label>
+<input type="number" id="amount">
+
+<label for="from">Form:</label>
+<select id="from">
+  <option value="usd">USD</option>
+  <option value="VND">VND</option>
+  <!-- Thêm các tùy chọn tiền tệ khác nếu cần -->
+</select>
+
+<label for="to" style="margin: 30px;">To:</label>
+<select id="to">
+  <option value="usd">USD</option>
+  <option value="VND">VND</option>
+  <!-- Thêm các tùy chọn tiền tệ khác nếu cần -->
+</select>
+
+<button onclick="convertCurrency()">Chuyển đổi</button>
+
+<p id="result"></p>
+
+<script>
+function convertCurrency() {
+  var amount = document.getElementById("amount").value;
+  var from = document.getElementById("from").value;
+  var to = document.getElementById("to").value;
+
+  // Biểu đồ chuyển đổi tạm thời, có thể cần cập nhật với tỷ giá thực tế
+  var exchangeRates = {
+    "usd": {
+      "usd": 1,
+      "VND": 23000
+    },
+    "VND": {
+      "usd": 1/23000,
+      "VND": 1
+    }
+    // Thêm các tỷ giá khác nếu cần
+  };
+
+  var result = amount * exchangeRates[from][to];
+  document.getElementById("result").innerHTML = amount + " " + from.toUpperCase() + " = " + result.toFixed(2) + " " + to.toUpperCase();
+}
+
+</script>
+
+</body>
+</html>
