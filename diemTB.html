@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <b3> Điểm lý:</b3>
+    <input type="number"  placeholder="nhâp giá trị" id="a"><br>
+    <b3> Điểm hoá</b3>
+    <input type="number" placeholder="nhâp giá trị" id="b">
+    <br>
+    <b3> Điểm sinh</b3>
+    <input type="number" placeholder="nhâp giá trị" id="c"><br>
+    <button onclick="hienThiTong()">điểm</button>
+    <h3>kết quả:<div id= "result"></div> <div id="result2"></div></div> </h3>
+    <script>
+         function hienThiTong(){
+            let a = document.getElementById("a").value;
+            let b = document.getElementById("b").value;
+            let c = document.getElementById("c").value;
+            a = parseFloat(a);
+            b = parseFloat(b);
+            c = parseFloat(c);
+            let result = a + b + c;
+                result2 = (a+b+c)/3;
+            document.getElementById("result").innerHTML ="điểm tổng:" + result;
+            document.getElementById("result2").innerHTML ="điểm trung bình:"+ result2;
+        }
+    </script>
+</body>
+</html>
